@@ -1,0 +1,604 @@
+<!DOCTYPE html><html class="hide-aside" lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>HW2 | CorzanX</title><meta name="author" content="CorzanX"><meta name="copyright" content="CorzanX"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Static Personal Blog Website Project ReportStudent Name: Zheng ChenStudent ID: ZY2557201Submission Date: 2026-04-19    1. Website Information   Item Description    Website framework Hexo 6.3.0   Theme">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HW2">
+<meta property="og:url" content="https://corzanx.github.io/2026/04/19/HW2/index.html">
+<meta property="og:site_name" content="CorzanX">
+<meta property="og:description" content="Static Personal Blog Website Project ReportStudent Name: Zheng ChenStudent ID: ZY2557201Submission Date: 2026-04-19    1. Website Information   Item Description    Website framework Hexo 6.3.0   Theme">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://corzanx.github.io/img/logo.jpg">
+<meta property="article:published_time" content="2026-04-19T07:10:07.000Z">
+<meta property="article:modified_time" content="2026-04-19T07:12:36.080Z">
+<meta property="article:author" content="CorzanX">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="GitHub Pages">
+<meta property="article:tag" content="Static Site">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://corzanx.github.io/img/logo.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://corzanx.github.io/2026/04/19/HW2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HW2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-04-19 15:12:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="CorzanX"><span class="site-name">CorzanX</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HW2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-19T07:10:07.000Z" title="发表于 2026-04-19 15:10:07">2026-04-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-19T07:12:36.080Z" title="更新于 2026-04-19 15:12:36">2026-04-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Software-Technology-Homework/">Software Technology Homework</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HW2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Static-Personal-Blog-Website-Project-Report"><a href="#Static-Personal-Blog-Website-Project-Report" class="headerlink" title="Static Personal Blog Website Project Report"></a>Static Personal Blog Website Project Report</h1><p><strong>Student Name</strong>: Zheng Chen<br><strong>Student ID</strong>: ZY2557201<br><strong>Submission Date</strong>: 2026-04-19  </p>
+<hr>
+<h2 id="1-Website-Information"><a href="#1-Website-Information" class="headerlink" title="1. Website Information"></a>1. Website Information</h2><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Website framework</td>
+<td>Hexo 6.3.0</td>
+</tr>
+<tr>
+<td>Theme</td>
+<td>Butterfly 4.9.0</td>
+</tr>
+<tr>
+<td>Deployment target</td>
+<td>GitHub Pages</td>
+</tr>
+<tr>
+<td>Website URL</td>
+<td><a href="https://corzanx.github.io/">https://corzanx.github.io/</a></td>
+</tr>
+<tr>
+<td>Assignment 1 report</td>
+<td><a href="https://corzanx.github.io/2026/03/31/HW1/">https://corzanx.github.io/2026/03/31/HW1/</a></td>
+</tr>
+<tr>
+<td>Assignment 2 report</td>
+<td><a href="https://corzanx.github.io/2026/04/19/HW2/">https://corzanx.github.io/2026/04/19/HW2/</a></td>
+</tr>
+</tbody></table>
+<p>The website is a static personal blog generated by Hexo. It can be accessed through the GitHub Pages URL above after deployment. The first assignment report has already been added as a blog post and is integrated into the same website.</p>
+<hr>
+<h2 id="2-Objective"><a href="#2-Objective" class="headerlink" title="2. Objective"></a>2. Objective</h2><p>The goal of this assignment is to set up and deploy a static personal blog website, manage the project with Git, integrate the previous Markdown report, and document the full process.</p>
+<p>This project satisfies the requirements in the following ways:</p>
+<ol>
+<li>The blog is built as a static website with Hexo.</li>
+<li>The site is deployed to GitHub Pages.</li>
+<li>The previous assignment report, <code>HW1.md</code>, is included as a post.</li>
+<li>The project is managed with Git commits that represent different stages of development.</li>
+<li>This Markdown report documents the setup, deployment, Git process, and tool choices.</li>
+</ol>
+<hr>
+<h2 id="3-Project-Structure"><a href="#3-Project-Structure" class="headerlink" title="3. Project Structure"></a>3. Project Structure</h2><p>The main project files are organized as follows:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">corzanx_blog/</span><br><span class="line">├── _config.yml</span><br><span class="line">├── _config.butterfly.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds/</span><br><span class="line">├── source/</span><br><span class="line">│   ├── _posts/</span><br><span class="line">│   │   ├── HW1.md</span><br><span class="line">│   │   └── HW2.md</span><br><span class="line">│   ├── categories/</span><br><span class="line">│   ├── css/</span><br><span class="line">│   ├── link/</span><br><span class="line">│   └── tags/</span><br><span class="line">├── themes/</span><br><span class="line">│   └── butterfly/</span><br><span class="line">└── public/</span><br></pre></td></tr></table></figure>
+
+<p>Important files and folders:</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>_config.yml</code></td>
+<td>Main Hexo configuration, including site URL and deployment settings</td>
+</tr>
+<tr>
+<td><code>_config.butterfly.yml</code></td>
+<td>Theme configuration for the Butterfly theme</td>
+</tr>
+<tr>
+<td><code>package.json</code></td>
+<td>Node.js dependencies and build scripts</td>
+</tr>
+<tr>
+<td><code>source/_posts/</code></td>
+<td>Markdown blog posts</td>
+</tr>
+<tr>
+<td><code>source/_posts/HW1.md</code></td>
+<td>Assignment 1 report integrated into the website</td>
+</tr>
+<tr>
+<td><code>source/_posts/HW2.md</code></td>
+<td>This assignment report</td>
+</tr>
+<tr>
+<td><code>public/</code></td>
+<td>Generated static HTML files</td>
+</tr>
+<tr>
+<td><code>.deploy_git/</code></td>
+<td>Temporary deployment Git directory generated by Hexo deployer</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="4-Tool-and-Framework-Choice"><a href="#4-Tool-and-Framework-Choice" class="headerlink" title="4. Tool and Framework Choice"></a>4. Tool and Framework Choice</h2><p>I chose <strong>Hexo</strong> as the static site generator because this blog had already been created with Hexo before, and the existing folder structure was still usable. Reusing the existing Hexo project made the process efficient and avoided rebuilding the website from zero.</p>
+<p>Reasons for using Hexo:</p>
+<ul>
+<li>It converts Markdown posts into static HTML pages.</li>
+<li>It is suitable for personal blogs and assignment reports.</li>
+<li>It has a clear project structure.</li>
+<li>It supports themes and plugins.</li>
+<li>It can deploy directly to GitHub Pages with <code>hexo-deployer-git</code>.</li>
+</ul>
+<p>I used the <strong>Butterfly</strong> theme because it was already configured in this project and provides a complete blog layout, including post pages, category pages, tag pages, and local search.</p>
+<p>The project uses the following npm scripts:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo generate&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;clean&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo clean&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;deploy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-Setup-and-Recovery-Process"><a href="#5-Setup-and-Recovery-Process" class="headerlink" title="5. Setup and Recovery Process"></a>5. Setup and Recovery Process</h2><p>Since this blog was originally created several years ago, I first checked the existing files instead of creating a new project immediately.</p>
+<h3 id="5-1-Check-Existing-Configuration"><a href="#5-1-Check-Existing-Configuration" class="headerlink" title="5.1 Check Existing Configuration"></a>5.1 Check Existing Configuration</h3><p>I inspected the main Hexo configuration file:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">&#x27;1,220p&#x27;</span> _config.yml</span><br></pre></td></tr></table></figure>
+
+<p>The important configuration values were:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">CorzanX</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">CorzanX</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://corzanx.github.io/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:CorzanX/CorzanX.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+
+<p>This shows that the blog is configured to use the Butterfly theme and deploy to the GitHub Pages repository.</p>
+<h3 id="5-2-Check-Existing-Posts"><a href="#5-2-Check-Existing-Posts" class="headerlink" title="5.2 Check Existing Posts"></a>5.2 Check Existing Posts</h3><p>The existing posts are stored in:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span>/_posts/</span><br></pre></td></tr></table></figure>
+
+<p>The first assignment report is:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span>/_posts/HW1.md</span><br></pre></td></tr></table></figure>
+
+<p>Because Hexo uses the post date and title to generate the URL, the deployed HW1 page is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://corzanx.github.io/2026/03/31/HW1/</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-Add-the-Second-Assignment-Report"><a href="#5-3-Add-the-Second-Assignment-Report" class="headerlink" title="5.3 Add the Second Assignment Report"></a>5.3 Add the Second Assignment Report</h3><p>I created this file:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span>/_posts/HW2.md</span><br></pre></td></tr></table></figure>
+
+<p>The front matter defines the title, date, tags, and category:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">HW2</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2026-04-19 15:10:07</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Hexo</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Git</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">GitHub</span> <span class="string">Pages</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Static</span> <span class="string">Site</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Software</span> <span class="string">Technology</span> <span class="string">Homework</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>After deployment, the expected URL of this report is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://corzanx.github.io/2026/04/19/HW2/</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-Integration-of-Assignment-1"><a href="#6-Integration-of-Assignment-1" class="headerlink" title="6. Integration of Assignment 1"></a>6. Integration of Assignment 1</h2><p>Assignment 1 is integrated into the blog as a normal Hexo post.</p>
+<p>The source Markdown file is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source/_posts/HW1.md</span><br></pre></td></tr></table></figure>
+
+<p>The public page URL is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://corzanx.github.io/2026/03/31/HW1/</span><br></pre></td></tr></table></figure>
+
+<p>It is also grouped under the category:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Software Technology Homework</span><br></pre></td></tr></table></figure>
+
+<p>This makes the first assignment accessible from the blog’s post list, category page, archive page, and direct link.</p>
+<hr>
+<h2 id="7-Git-Management-Process"><a href="#7-Git-Management-Process" class="headerlink" title="7. Git Management Process"></a>7. Git Management Process</h2><p>The project is managed with Git at two levels:</p>
+<ol>
+<li>The Hexo source project is managed as the development repository.</li>
+<li>The generated static website is deployed through Hexo’s Git deployer to GitHub Pages.</li>
+</ol>
+<h3 id="7-1-Source-Repository-Commits"><a href="#7-1-Source-Repository-Commits" class="headerlink" title="7.1 Source Repository Commits"></a>7.1 Source Repository Commits</h3><p>I used meaningful commits to record the development process. Each commit corresponds to one logical step rather than an unrelated small change.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Commit Message</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>Initialize Hexo source project</code></td>
+<td>Add the core Hexo configuration, npm package files, scaffolds, and ignore rules</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>Add Butterfly theme configuration</code></td>
+<td>Add the Butterfly theme configuration and record the theme repository reference</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>Add existing blog source content</code></td>
+<td>Add existing posts, custom pages, and CSS files that form the blog content</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>Add assignment 1 report post</code></td>
+<td>Add <code>HW1.md</code> and integrate the previous assignment into the website</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>Add assignment 2 deployment report</code></td>
+<td>Add <code>HW2.md</code> to document the static blog setup and deployment process</td>
+</tr>
+</tbody></table>
+<p>These commits reflect the logical progression of the project:</p>
+<ol>
+<li>Prepare the static site project.</li>
+<li>Configure the visual theme and keep the theme source traceable.</li>
+<li>Add the blog content.</li>
+<li>Integrate the previous homework.</li>
+<li>Document and complete the second homework.</li>
+</ol>
+<h3 id="7-2-Deployment-Git-Process"><a href="#7-2-Deployment-Git-Process" class="headerlink" title="7.2 Deployment Git Process"></a>7.2 Deployment Git Process</h3><p>Hexo generates static files into the <code>public/</code> directory. The deployment command is:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure>
+
+<p>This script runs:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>The deployer publishes the generated HTML files to:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git@github.com:CorzanX/CorzanX.github.io.git</span><br></pre></td></tr></table></figure>
+
+<p>The configured deployment branch is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="8-Build-and-Deployment-Steps"><a href="#8-Build-and-Deployment-Steps" class="headerlink" title="8. Build and Deployment Steps"></a>8. Build and Deployment Steps</h2><p>The complete build and deployment process is:</p>
+<h3 id="8-1-Install-Dependencies"><a href="#8-1-Install-Dependencies" class="headerlink" title="8.1 Install Dependencies"></a>8.1 Install Dependencies</h3><p>If the dependencies are missing, install them with:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-2-Generate-Static-Files"><a href="#8-2-Generate-Static-Files" class="headerlink" title="8.2 Generate Static Files"></a>8.2 Generate Static Files</h3><p>Run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<p>This executes:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>The generated HTML, CSS, JavaScript, and search index files are written to:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public/</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-3-Preview-Locally"><a href="#8-3-Preview-Locally" class="headerlink" title="8.3 Preview Locally"></a>8.3 Preview Locally</h3><p>Run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run server</span><br></pre></td></tr></table></figure>
+
+<p>Then open the local preview URL shown by Hexo, usually:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000/</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-4-Deploy-to-GitHub-Pages"><a href="#8-4-Deploy-to-GitHub-Pages" class="headerlink" title="8.4 Deploy to GitHub Pages"></a>8.4 Deploy to GitHub Pages</h3><p>Run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure>
+
+<p>After deployment, the website can be visited at:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://corzanx.github.io/</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="9-Accessibility-and-Functionality-Check"><a href="#9-Accessibility-and-Functionality-Check" class="headerlink" title="9. Accessibility and Functionality Check"></a>9. Accessibility and Functionality Check</h2><p>I checked the project from the following aspects:</p>
+<table>
+<thead>
+<tr>
+<th>Check Item</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Home page generation</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>Post page generation</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>HW1 page link</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>HW2 page generation</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>Category page</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>Tag page</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>Search index generation</td>
+<td>Passed</td>
+</tr>
+<tr>
+<td>Static resource generation</td>
+<td>Passed</td>
+</tr>
+</tbody></table>
+<p>The website is static, so it does not require a backend server after deployment. All pages can be served directly by GitHub Pages.</p>
+<hr>
+<h2 id="10-Reflection"><a href="#10-Reflection" class="headerlink" title="10. Reflection"></a>10. Reflection</h2><p>This assignment helped me reconnect with a Hexo blog project that had not been actively maintained for several years. Instead of discarding the old project, I inspected its structure, confirmed the deployment configuration, reused the existing theme, and added new assignment content.</p>
+<p>The most useful part of the process was understanding the relationship between Markdown source files and generated static pages:</p>
+<ul>
+<li>Markdown files in <code>source/_posts/</code> are the source content.</li>
+<li>Hexo converts them into HTML pages.</li>
+<li>GitHub Pages serves the final static website.</li>
+<li>Git records the development history.</li>
+</ul>
+<p>This workflow is simple but practical. It is suitable for course reports, technical notes, and personal documentation.</p>
+<hr>
+<h2 id="11-Conclusion"><a href="#11-Conclusion" class="headerlink" title="11. Conclusion"></a>11. Conclusion</h2><p>In this project, I completed a static personal blog website using Hexo and GitHub Pages. I integrated the first assignment report into the blog, created this second assignment report, documented the setup and deployment process, and organized the project with meaningful Git commits.</p>
+<p>The final website URL is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://corzanx.github.io/</span><br></pre></td></tr></table></figure>
+
+<p>The Assignment 1 report URL is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://corzanx.github.io/2026/03/31/HW1/</span><br></pre></td></tr></table></figure>
+
+<p>The Assignment 2 report URL is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://corzanx.github.io/2026/04/19/HW2/</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li>Hexo Documentation: <a target="_blank" rel="noopener" href="https://hexo.io/docs/">https://hexo.io/docs/</a></li>
+<li>Hexo Deployment Documentation: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment">https://hexo.io/docs/one-command-deployment</a></li>
+<li>Butterfly Theme Documentation: <a target="_blank" rel="noopener" href="https://butterfly.js.org/">https://butterfly.js.org/</a></li>
+<li>GitHub Pages Documentation: <a target="_blank" rel="noopener" href="https://docs.github.com/en/pages">https://docs.github.com/en/pages</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://corzanx.github.io">CorzanX</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://corzanx.github.io/2026/04/19/HW2/">https://corzanx.github.io/2026/04/19/HW2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://corzanx.github.io" target="_blank">CorzanX</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/Git/">Git</a><a class="post-meta__tags" href="/tags/GitHub-Pages/">GitHub Pages</a><a class="post-meta__tags" href="/tags/Static-Site/">Static Site</a></div><div class="post_share"><div class="social-share" data-image="/img/logo.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2026/03/31/HW1/" title="HW1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">HW1</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/logo.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CorzanX</div><div class="author-info__description">希望对你有些用</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/CorzanX" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:corzanxian@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Static-Personal-Blog-Website-Project-Report"><span class="toc-number">1.</span> <span class="toc-text">Static Personal Blog Website Project Report</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Website-Information"><span class="toc-number">1.1.</span> <span class="toc-text">1. Website Information</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Objective"><span class="toc-number">1.2.</span> <span class="toc-text">2. Objective</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Project-Structure"><span class="toc-number">1.3.</span> <span class="toc-text">3. Project Structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Tool-and-Framework-Choice"><span class="toc-number">1.4.</span> <span class="toc-text">4. Tool and Framework Choice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Setup-and-Recovery-Process"><span class="toc-number">1.5.</span> <span class="toc-text">5. Setup and Recovery Process</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-Check-Existing-Configuration"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1 Check Existing Configuration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-Check-Existing-Posts"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2 Check Existing Posts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-Add-the-Second-Assignment-Report"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3 Add the Second Assignment Report</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Integration-of-Assignment-1"><span class="toc-number">1.6.</span> <span class="toc-text">6. Integration of Assignment 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Git-Management-Process"><span class="toc-number">1.7.</span> <span class="toc-text">7. Git Management Process</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-Source-Repository-Commits"><span class="toc-number">1.7.1.</span> <span class="toc-text">7.1 Source Repository Commits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-Deployment-Git-Process"><span class="toc-number">1.7.2.</span> <span class="toc-text">7.2 Deployment Git Process</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Build-and-Deployment-Steps"><span class="toc-number">1.8.</span> <span class="toc-text">8. Build and Deployment Steps</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-Install-Dependencies"><span class="toc-number">1.8.1.</span> <span class="toc-text">8.1 Install Dependencies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-Generate-Static-Files"><span class="toc-number">1.8.2.</span> <span class="toc-text">8.2 Generate Static Files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-Preview-Locally"><span class="toc-number">1.8.3.</span> <span class="toc-text">8.3 Preview Locally</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-Deploy-to-GitHub-Pages"><span class="toc-number">1.8.4.</span> <span class="toc-text">8.4 Deploy to GitHub Pages</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Accessibility-and-Functionality-Check"><span class="toc-number">1.9.</span> <span class="toc-text">9. Accessibility and Functionality Check</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-Reflection"><span class="toc-number">1.10.</span> <span class="toc-text">10. Reflection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-Conclusion"><span class="toc-number">1.11.</span> <span class="toc-text">11. Conclusion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">1.12.</span> <span class="toc-text">References</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/19/HW2/" title="HW2">HW2</a><time datetime="2026-04-19T07:10:07.000Z" title="发表于 2026-04-19 15:10:07">2026-04-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/HW1/" title="HW1">HW1</a><time datetime="2026-03-31T06:50:40.000Z" title="发表于 2026-03-31 14:50:40">2026-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/16/dkx/" title="大学生该如何接触自媒体">大学生该如何接触自媒体</a><time datetime="2023-09-16T15:30:27.000Z" title="发表于 2023-09-16 23:30:27">2023-09-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/06/firstClassMeeting/" title="23软外03班线上班会">23软外03班线上班会</a><time datetime="2023-09-06T07:49:17.000Z" title="发表于 2023-09-06 15:49:17">2023-09-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/04/%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80/" title="C++ 数据结构 栈 中缀表达式转后缀表达式并求值">C++ 数据结构 栈 中缀表达式转后缀表达式并求值</a><time datetime="2023-08-04T06:49:21.000Z" title="发表于 2023-08-04 14:49:21">2023-08-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2026 By CorzanX</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'irOtH7sojKfbS8Hrm28mZ3Sw-gzGzoHsz',
+      appKey: 'RwkXFAef9OO0EFzHmrBBo8h3',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="5013328452" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
