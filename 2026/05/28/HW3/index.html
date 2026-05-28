@@ -1,0 +1,508 @@
+<!DOCTYPE html><html class="hide-aside" lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>HW3 | CorzanX</title><meta name="author" content="CorzanX"><meta name="copyright" content="CorzanX"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Deployment and Integration of AI AgentsStudent Name: Zheng ChenStudent ID: ZY2557201Submission Date: 2026-05-28    1. Assignment GoalThe goal of this assignment is to deploy and test both an online LL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HW3">
+<meta property="og:url" content="https://corzanx.github.io/2026/05/28/HW3/index.html">
+<meta property="og:site_name" content="CorzanX">
+<meta property="og:description" content="Deployment and Integration of AI AgentsStudent Name: Zheng ChenStudent ID: ZY2557201Submission Date: 2026-05-28    1. Assignment GoalThe goal of this assignment is to deploy and test both an online LL">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://corzanx.github.io/img/logo.jpg">
+<meta property="article:published_time" content="2026-05-28T10:30:00.000Z">
+<meta property="article:modified_time" content="2026-05-28T09:24:22.288Z">
+<meta property="article:author" content="CorzanX">
+<meta property="article:tag" content="AI Agent">
+<meta property="article:tag" content="DeepSeek">
+<meta property="article:tag" content="Ollama">
+<meta property="article:tag" content="Qwen">
+<meta property="article:tag" content="VSCode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://corzanx.github.io/img/logo.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://corzanx.github.io/2026/05/28/HW3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HW3',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-05-28 17:24:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="CorzanX"><span class="site-name">CorzanX</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HW3</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-05-28T10:30:00.000Z" title="Created 2026-05-28 18:30:00">2026-05-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-28T09:24:22.288Z" title="Updated 2026-05-28 17:24:22">2026-05-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Software-Technology-Homework/">Software Technology Homework</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>8min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HW3"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Deployment-and-Integration-of-AI-Agents"><a href="#Deployment-and-Integration-of-AI-Agents" class="headerlink" title="Deployment and Integration of AI Agents"></a>Deployment and Integration of AI Agents</h1><p><strong>Student Name</strong>: Zheng Chen<br><strong>Student ID</strong>: ZY2557201<br><strong>Submission Date</strong>: 2026-05-28  </p>
+<hr>
+<h2 id="1-Assignment-Goal"><a href="#1-Assignment-Goal" class="headerlink" title="1. Assignment Goal"></a>1. Assignment Goal</h2><p>The goal of this assignment is to deploy and test both an online LLM agent and a local LLM, then integrate an LLM into a development workflow. I used:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Tool &#x2F; Model</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Online agent</td>
+<td>DeepSeek API</td>
+<td>Analyze a Markdown file and answer a specific question</td>
+</tr>
+<tr>
+<td>Local model</td>
+<td>Ollama + Qwen</td>
+<td>Run a local coding assistant from the terminal</td>
+</tr>
+<tr>
+<td>IDE integration</td>
+<td>VSCode + Continue + Qwen2.5</td>
+<td>Explain and refactor code inside the editor</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>Hexo Markdown post</td>
+<td>Record the process, challenges, and reflections</td>
+</tr>
+</tbody></table>
+<p>I did not include the bonus part in this report. The bonus policy requires fully independent work and no AI-generated draft.</p>
+<hr>
+<h2 id="2-Project-Files"><a href="#2-Project-Files" class="headerlink" title="2. Project Files"></a>2. Project Files</h2><p>I created a small helper folder for this assignment:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">assignments/hw3/</span><br><span class="line">├── README.md</span><br><span class="line">├── deepseek_file_agent.py</span><br><span class="line">├── ollama_qwen_demo.py</span><br><span class="line">├── sample_refactor.py</span><br><span class="line">└── continue-config-example.yaml</span><br></pre></td></tr></table></figure>
+
+<p>The helper files are used for:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>deepseek_file_agent.py</code></td>
+<td>A DeepSeek API based file analysis agent</td>
+</tr>
+<tr>
+<td><code>ollama_qwen_demo.py</code></td>
+<td>A terminal demo for Ollama + Qwen</td>
+</tr>
+<tr>
+<td><code>sample_refactor.py</code></td>
+<td>A small inefficient Python function for IDE refactoring</td>
+</tr>
+<tr>
+<td><code>continue-config-example.yaml</code></td>
+<td>Example configuration for VSCode Continue</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="3-Online-Agent-DeepSeek-File-Analysis"><a href="#3-Online-Agent-DeepSeek-File-Analysis" class="headerlink" title="3. Online Agent: DeepSeek File Analysis"></a>3. Online Agent: DeepSeek File Analysis</h2><h3 id="3-1-Design"><a href="#3-1-Design" class="headerlink" title="3.1 Design"></a>3.1 Design</h3><p>For the online agent part, I chose the file analysis task instead of web search. The agent reads a local Markdown file and answers a question based only on the file content.</p>
+<p>The script is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assignments/hw3/deepseek_file_agent.py</span><br></pre></td></tr></table></figure>
+
+<p>The key idea is:</p>
+<ol>
+<li>Read the selected local file.</li>
+<li>Send the file content and a user question to DeepSeek.</li>
+<li>Ask the model to answer only from the provided file.</li>
+<li>Print the answer in the terminal.</li>
+</ol>
+<h3 id="3-2-API-Setup"><a href="#3-2-API-Setup" class="headerlink" title="3.2 API Setup"></a>3.2 API Setup</h3><p>DeepSeek provides an OpenAI-compatible chat completion API. I used the following environment variable to avoid writing the API key into source code:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> DEEPSEEK_API_KEY=<span class="string">&quot;your_api_key_here&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>The script uses:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.deepseek.com/chat/completions</span><br></pre></td></tr></table></figure>
+
+<p>The default model is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deepseek-v4-flash</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-Command"><a href="#3-3-Command" class="headerlink" title="3.3 Command"></a>3.3 Command</h3><p>I used Assignment 1 as the input file because it contains a C and Python matrix multiplication performance comparison.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python3 assignments/hw3/deepseek_file_agent.py \</span><br><span class="line">  --file <span class="built_in">source</span>/_posts/HW1.md \</span><br><span class="line">  --question <span class="string">&quot;What are the main performance differences between the C and Python implementations, and how could the Python version be improved?&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-Result"><a href="#3-4-Result" class="headerlink" title="3.4 Result"></a>3.4 Result</h3><!-- TODO: Run the command after setting DEEPSEEK_API_KEY, then paste your real terminal output here. -->
+
+<p>Example evidence to record:</p>
+<p><img src="/img/hw3/deepseek-file-agent.png" alt="DeepSeek file analysis result"></p>
+<p>The expected answer should mention that the C implementation is faster because it is compiled and has lower loop overhead, while the Python version is slower because of interpreter overhead and high-level list operations. A reasonable improvement is to use NumPy or optimize the algorithm and data layout.</p>
+<hr>
+<h2 id="4-Local-Model-Ollama-Qwen"><a href="#4-Local-Model-Ollama-Qwen" class="headerlink" title="4. Local Model: Ollama + Qwen"></a>4. Local Model: Ollama + Qwen</h2><h3 id="4-1-Installation"><a href="#4-1-Installation" class="headerlink" title="4.1 Installation"></a>4.1 Installation</h3><p>Ollama is used to run a local LLM on my machine. The selected model is Qwen because it is strong for Chinese, English, and coding tasks.</p>
+<p>Install Ollama from:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://ollama.com/</span><br></pre></td></tr></table></figure>
+
+<p>Or install with Homebrew on macOS:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ollama</span><br></pre></td></tr></table></figure>
+
+<p>Start Ollama:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ollama serve</span><br></pre></td></tr></table></figure>
+
+<p>Pull the Qwen model:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ollama pull qwen2.5-coder:7b</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-Basic-Interaction"><a href="#4-2-Basic-Interaction" class="headerlink" title="4.2 Basic Interaction"></a>4.2 Basic Interaction</h3><p>After the model is downloaded, a direct terminal interaction can be tested with:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ollama run qwen2.5-coder:7b</span><br></pre></td></tr></table></figure>
+
+<p>Example prompt:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Explain the difference between O(n^2) and O(n) using a Python example.</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-Python-Demo"><a href="#4-3-Python-Demo" class="headerlink" title="4.3 Python Demo"></a>4.3 Python Demo</h3><p>I also prepared a Python script:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assignments/hw3/ollama_qwen_demo.py</span><br></pre></td></tr></table></figure>
+
+<p>Run it with:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 assignments/hw3/ollama_qwen_demo.py</span><br></pre></td></tr></table></figure>
+
+<p>This script sends a small inefficient Python function to the local Qwen model and asks it to explain the time complexity and refactor the code.</p>
+<h3 id="4-4-Result"><a href="#4-4-Result" class="headerlink" title="4.4 Result"></a>4.4 Result</h3><!-- TODO: Install Ollama, pull qwen2.5-coder:7b, run the command, then paste your real output here. -->
+
+<p>Example evidence to record:</p>
+<p><img src="/img/hw3/ollama-qwen-demo.png" alt="Ollama Qwen local model demo"></p>
+<p>The expected improvement is to replace the nested loop with a <code>set</code>, reducing membership checking from repeated linear scans to average O(1) lookup while preserving item order.</p>
+<hr>
+<h2 id="5-IDE-Integration"><a href="#5-IDE-Integration" class="headerlink" title="5. IDE Integration"></a>5. IDE Integration</h2><h3 id="5-1-Tool-Choice"><a href="#5-1-Tool-Choice" class="headerlink" title="5.1 Tool Choice"></a>5.1 Tool Choice</h3><p>For IDE integration, I used <strong>VSCode + Continue</strong>. Continue is useful for this assignment because it can read the currently opened file in the editor, send the selected code or active file context to an LLM, and return explanations or refactoring suggestions without leaving the IDE.</p>
+<p>In this experiment, Continue was connected to a local model through Ollama. I used the Qwen2.5 family model because it is suitable for code explanation and small refactoring tasks.</p>
+<p>The example Continue configuration is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assignments/hw3/continue-config-example.yaml</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-Models"><a href="#5-2-Models" class="headerlink" title="5.2 Models"></a>5.2 Models</h3><p>The IDE assistant setup used:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Provider</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Llama 3.1 8B</td>
+<td>Ollama + Continue</td>
+<td>Explain and refactor code directly in VSCode</td>
+</tr>
+</tbody></table>
+<h3 id="5-3-Refactoring-Demonstration"><a href="#5-3-Refactoring-Demonstration" class="headerlink" title="5.3 Refactoring Demonstration"></a>5.3 Refactoring Demonstration</h3><p>The test file is:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assignments/hw3/sample_refactor.py</span><br></pre></td></tr></table></figure>
+
+<p>Original function:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">slow_unique</span>(<span class="params">items</span>):</span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">        found = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">for</span> existing <span class="keyword">in</span> result:</span><br><span class="line">            <span class="keyword">if</span> existing == item:</span><br><span class="line">                found = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> found:</span><br><span class="line">            result.append(item)</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p>Prompt used in the IDE:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Explain the time complexity of this function and refactor it while preserving the original item order.</span><br></pre></td></tr></table></figure>
+
+<p>Continue first read the currently opened file, then explained that the original implementation uses a nested loop. For each item in the input list, it scans the current <code>result</code> list to check whether the item has appeared before, so the worst-case time complexity is O(n^2).</p>
+<p>It then suggested replacing the repeated linear scan with a hash-based data structure. One possible refactored version is:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">unique_preserve_order</span>(<span class="params">items</span>):</span><br><span class="line">    seen = <span class="built_in">set</span>()</span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">        <span class="keyword">if</span> item <span class="keyword">not</span> <span class="keyword">in</span> seen:</span><br><span class="line">            seen.add(item)</span><br><span class="line">            result.append(item)</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-4-IDE-Evidence"><a href="#5-4-IDE-Evidence" class="headerlink" title="5.4 IDE Evidence"></a>5.4 IDE Evidence</h3><p>The screenshot below shows Continue running inside VSCode. The right side is the opened file <code>sample_refactor.py</code>, and the left side is Continue’s explanation and refactoring suggestion. The prompt asks the assistant to explain the complexity and refactor the function while preserving the original order.</p>
+<p><img src="/img/hw3/continue.png" alt="VSCode Continue Qwen2.5 refactoring demo"></p>
+<p>This demonstrates that the IDE assistant can work with the current code context and help with a practical coding task. Compared with using a terminal-only chatbot, the IDE workflow is more convenient because the model can directly refer to the file being edited and return code that can be applied or copied back into the project.</p>
+<hr>
+<h2 id="6-Challenges-and-Solutions"><a href="#6-Challenges-and-Solutions" class="headerlink" title="6. Challenges and Solutions"></a>6. Challenges and Solutions</h2><table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Avoid exposing API keys</td>
+<td>Store <code>DEEPSEEK_API_KEY</code> in an environment variable instead of source code</td>
+</tr>
+<tr>
+<td>Online model cannot directly see local files</td>
+<td>Read the local file in Python and send only the selected content to the API</td>
+</tr>
+<tr>
+<td>Local model may not be installed by default</td>
+<td>Install Ollama and pull the Qwen model before running the demo</td>
+</tr>
+<tr>
+<td>Local model responses may be slower</td>
+<td>Use a smaller Qwen model if memory or speed is limited</td>
+</tr>
+<tr>
+<td>IDE extensions require separate configuration</td>
+<td>Prepare a Continue configuration example for both DeepSeek and Ollama</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="7-Reflection"><a href="#7-Reflection" class="headerlink" title="7. Reflection"></a>7. Reflection</h2><p>The online model and the local model are useful in different situations.</p>
+<p>DeepSeek is easier to start with once the API key is configured. It does not require local model storage or local GPU memory, and the response quality is generally strong. It is suitable for file analysis, explaining reports, and handling tasks that need stronger reasoning.</p>
+<p>Ollama with Qwen is more private and independent because the model runs locally. It is useful for code explanation and quick experiments without sending code to an online service. The tradeoff is that installation, model download, and local hardware performance matter more.</p>
+<p>For my workflow, the online model is better for polished explanations and broader reasoning, while the local model is better for private code experiments and lightweight refactoring. IDE integration is the most convenient form because it keeps the model close to the code I am editing.</p>
+<hr>
+<h2 id="8-Conclusion"><a href="#8-Conclusion" class="headerlink" title="8. Conclusion"></a>8. Conclusion</h2><p>In this assignment, I prepared an online DeepSeek file analysis agent, a local Ollama Qwen interaction demo, and an IDE integration example. The work shows how online and local LLMs can be used not only for chatting, but also for file analysis, code explanation, and refactoring.</p>
+<p>The final report includes the DeepSeek file-analysis result, the Ollama Qwen terminal interaction, and the VSCode Continue IDE integration evidence.</p>
+<hr>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li>DeepSeek API Documentation: <a target="_blank" rel="noopener" href="https://api-docs.deepseek.com/">https://api-docs.deepseek.com/</a></li>
+<li>Ollama: <a target="_blank" rel="noopener" href="https://ollama.com/">https://ollama.com/</a></li>
+<li>Ollama Qwen Model Library: <a target="_blank" rel="noopener" href="https://ollama.com/library/qwen2.5-coder">https://ollama.com/library/qwen2.5-coder</a></li>
+<li>Continue Documentation: <a target="_blank" rel="noopener" href="https://docs.continue.dev/">https://docs.continue.dev/</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://corzanx.github.io">CorzanX</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://corzanx.github.io/2026/05/28/HW3/">https://corzanx.github.io/2026/05/28/HW3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/AI-Agent/">AI Agent</a><a class="post-meta__tags" href="/tags/DeepSeek/">DeepSeek</a><a class="post-meta__tags" href="/tags/Ollama/">Ollama</a><a class="post-meta__tags" href="/tags/Qwen/">Qwen</a><a class="post-meta__tags" href="/tags/VSCode/">VSCode</a></div><div class="post_share"><div class="social-share" data-image="/img/logo.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2026/04/19/HW2/" title="HW2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">HW2</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/logo.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CorzanX</div><div class="author-info__description">希望对你有些用</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/CorzanX" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:corzanxian@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Deployment-and-Integration-of-AI-Agents"><span class="toc-number">1.</span> <span class="toc-text">Deployment and Integration of AI Agents</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Assignment-Goal"><span class="toc-number">1.1.</span> <span class="toc-text">1. Assignment Goal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Project-Files"><span class="toc-number">1.2.</span> <span class="toc-text">2. Project Files</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Online-Agent-DeepSeek-File-Analysis"><span class="toc-number">1.3.</span> <span class="toc-text">3. Online Agent: DeepSeek File Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Design"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 Design</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-API-Setup"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 API Setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Command"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 Command</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-Result"><span class="toc-number">1.3.4.</span> <span class="toc-text">3.4 Result</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Local-Model-Ollama-Qwen"><span class="toc-number">1.4.</span> <span class="toc-text">4. Local Model: Ollama + Qwen</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Installation"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 Installation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Basic-Interaction"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 Basic Interaction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-Python-Demo"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 Python Demo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-Result"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4 Result</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-IDE-Integration"><span class="toc-number">1.5.</span> <span class="toc-text">5. IDE Integration</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-Tool-Choice"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1 Tool Choice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-Models"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2 Models</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-Refactoring-Demonstration"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3 Refactoring Demonstration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-IDE-Evidence"><span class="toc-number">1.5.4.</span> <span class="toc-text">5.4 IDE Evidence</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Challenges-and-Solutions"><span class="toc-number">1.6.</span> <span class="toc-text">6. Challenges and Solutions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Reflection"><span class="toc-number">1.7.</span> <span class="toc-text">7. Reflection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Conclusion"><span class="toc-number">1.8.</span> <span class="toc-text">8. Conclusion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">1.9.</span> <span class="toc-text">References</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/28/HW3/" title="HW3">HW3</a><time datetime="2026-05-28T10:30:00.000Z" title="Created 2026-05-28 18:30:00">2026-05-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/19/HW2/" title="HW2">HW2</a><time datetime="2026-04-19T07:10:07.000Z" title="Created 2026-04-19 15:10:07">2026-04-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/HW1/" title="HW1">HW1</a><time datetime="2026-03-31T06:50:40.000Z" title="Created 2026-03-31 14:50:40">2026-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/16/dkx/" title="大学生该如何接触自媒体">大学生该如何接触自媒体</a><time datetime="2023-09-16T15:30:27.000Z" title="Created 2023-09-16 23:30:27">2023-09-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/06/firstClassMeeting/" title="23软外03班线上班会">23软外03班线上班会</a><time datetime="2023-09-06T07:49:17.000Z" title="Created 2023-09-06 15:49:17">2023-09-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2026 By CorzanX</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'irOtH7sojKfbS8Hrm28mZ3Sw-gzGzoHsz',
+      appKey: 'RwkXFAef9OO0EFzHmrBBo8h3',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="5013328452" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
